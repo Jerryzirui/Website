@@ -1,0 +1,89 @@
+---
+const experiences = [
+  {
+    period: '2025.10 — 至今',
+    company: '中国建筑装饰集团东方装饰',
+    department: '智能建造研究院人工智能所',
+    position: '算法负责人',
+    highlights: [
+      'LangGraph AI Agent 架构设计，实现多步骤有状态工作流',
+      '四层多租户数据隔离体系（中间件/数据库/向量库/Prompt层）',
+      'RAG 混合检索系统 + 智能分块策略',
+      '移动端 SSE 流式输出 + 语音识别',
+    ],
+  },
+  {
+    period: '2025.01 — 2025.10',
+    company: '中国建筑装饰集团东方装饰',
+    department: '智能建造研究院机器人所',
+    position: '算法工程师',
+    highlights: [
+      'AI RAG 知识库系统（Vue.js + FastAPI + BGE + Chroma）',
+      'LangChain 多智能体施工方案生成系统',
+      '点云建筑构件逆向建模（Open3D + PCL）',
+      '放样机器人运动规划与控制（PyBullet 仿真）',
+    ],
+  },
+  {
+    period: '2021.12 — 2022.8',
+    company: '中国建筑集团东方装饰',
+    department: '总部科技部',
+    position: 'BIM 开发工程师',
+    highlights: [
+      '建筑信息模型软件开发及二次开发',
+      '信息轻量化平台前端构建（Vue.js）',
+    ],
+  },
+];
+---
+
+<section id="experience" class="relative py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-12 text-center">
+      <span class="text-tech-blue">//</span> 工作经历
+    </h2>
+
+    <div class="relative">
+      <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-tech-blue via-tech-purple to-transparent"></div>
+
+      {experiences.map((exp, index) => (
+        <div class={`relative mb-12 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:ml-auto'}`} data-animate>
+          <div class={`absolute top-0 w-3 h-3 rounded-full bg-tech-blue box-shadow-[0_0_10px_#00d4ff] ${index % 2 === 0 ? 'md:-left-1.5' : 'left-0 md:-left-1.5'}`}></div>
+
+          <div class={`ml-6 md:ml-0 p-6 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-tech-blue/30 transition-colors ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
+            <div class="mb-2">
+              <span class="text-xs font-mono text-tech-cyan">{exp.period}</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-1">{exp.position}</h3>
+            <p class="text-sm text-tech-blue mb-2">{exp.company}</p>
+            <p class="text-xs text-gray-500 mb-4">{exp.department}</p>
+
+            <ul class={`space-y-2 ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+              {exp.highlights.map((h) => (
+                <li class="text-sm text-gray-400 flex items-start gap-2">
+                  <span class="text-tech-purple mt-1">▹</span>
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

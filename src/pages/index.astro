@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ParticleBackground from '../components/three/ParticleBackground.astro';
+import Navbar from '../components/ui/Navbar.astro';
+import Hero from '../components/sections/Hero.astro';
+import Experience from '../components/sections/Experience.astro';
+import Education from '../components/sections/Education.astro';
+import Skills from '../components/sections/Skills.astro';
+import Contact from '../components/sections/Contact.astro';
+---
+
+<Layout title="张子睿 | AI算法负责人">
+  <ParticleBackground />
+  <Navbar />
+  <main class="relative z-10">
+    <Hero />
+    <Experience />
+    <Education />
+    <Skills />
+    <Contact />
+  </main>
+</Layout>
